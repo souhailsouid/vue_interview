@@ -15,13 +15,12 @@
 <script>
 import ToolBar from "@/components/ToolBar";
 import PostList from "@/components/Posts/PostList";
-import AppButton from "@/components/UI/AppButton";
+
 import { mapGetters } from "vuex";
 export default {
   layout: "admin",
   components: {
     PostList,
-    AppButton,
     ToolBar
   },
 
