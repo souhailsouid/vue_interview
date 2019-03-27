@@ -1,0 +1,49 @@
+<template>
+  <div class="admin-page">
+    <ToolBar/>
+    <section class="new-post">
+      <AppButton @click="$router.push('/admin/new-post')">Create Post</AppButton>
+    </section>
+    <section class="existing-posts">
+      <h1>Existing Posts</h1>
+
+      <PostList isAdmin :todos="loadedTodos"/>
+    </section>
+  </div>
+</template>
+
+<script>
+import ToolBar from "@/components/ToolBar";
+import PostList from "@/components/Posts/PostList";
+import AppButton from "@/components/UI/AppButton";
+import { mapGetters } from "vuex";
+export default {
+  layout: "admin",
+  components: {
+    PostList,
+    AppButton,
+    ToolBar
+  },
+
+  computed: {
+    ...mapGetters(["loadedTodos"])
+  }
+};
+</script>
+
+<style scoped>
+.admin-page {
+  padding: 20px;
+}
+
+.new-post {
+  text-align: center;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.existing-posts h1 {
+  text-align: center;
+}
+</style>
+

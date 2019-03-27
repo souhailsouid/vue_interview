@@ -1,0 +1,45 @@
+<template>
+  <section class="post-list">
+    <PostPreview
+      v-for="todo in todos"
+      :key="todo.id"
+      :id="todo.id"
+      :is-admin="isAdmin"
+      :completed="todo.completed"
+      :title="todo.title"
+    />
+  </section>
+</template>
+
+<script>
+import PostPreview from "@/components/Posts/PostPreview";
+
+export default {
+  components: {
+    PostPreview
+  },
+  props: {
+    isAdmin: {
+      type: Boolean,
+      default: false
+    },
+    todos: {
+      type: Array,
+      required: true
+    }
+  }
+};
+</script>
+
+
+<style scoped>
+.post-list {
+  display: flex;
+  padding: 20px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+</style>
+
