@@ -15,6 +15,7 @@
     "nuxt": "^2.5.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
+    "vuejs-paginate": "^2.1.0",
     "vuetify": "^1.5.7"
   },
   "devDependencies": {
